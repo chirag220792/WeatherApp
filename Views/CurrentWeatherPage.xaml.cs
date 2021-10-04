@@ -59,7 +59,7 @@ namespace WeatherApp.Views
         {
             var url = $"https://api.pexels.com/v1/search?query={Location}&per_page=15&page=1";
 
-            var result = await ApiCaller.Get(url, "563492ad6f917000010000019f41cfd80dd44a43af9d6e5c7d754e34");
+            var result = await ApiCaller.Get(url, "YourKey");
 
             if (result.Successful)
             {
@@ -72,7 +72,7 @@ namespace WeatherApp.Views
 
         private async void GetWeatherInfo()
         {
-            var url = $"https://api.openweathermap.org/data/2.5/weather?q={Location}&appid=0df439a820dcb9c0edf88b58e8e5129a&units=metric";
+            var url = $"https://api.openweathermap.org/data/2.5/weather?q={Location}&appid=YourKey&units=metric";
 
             var result = await ApiCaller.Get(url);
 
@@ -110,7 +110,7 @@ namespace WeatherApp.Views
 
         private async void GetForecast()
         {
-            var url = $"http://api.openweathermap.org/data/2.5/forecast?q={Location}&appid=0df439a820dcb9c0edf88b58e8e5129a&units=metric";
+            var url = $"http://api.openweathermap.org/data/2.5/forecast?q={Location}&appid=YourKey&units=metric";
             var result = await ApiCaller.Get(url);
 
             if (result.Successful)
